@@ -27,3 +27,20 @@
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+// item-media carousels: prev/next cycle through an item's photos
+(function () {
+  document.querySelectorAll('.item-media.car').forEach(function (car) {
+    var imgs = car.querySelectorAll('img');
+    var dots = car.querySelectorAll('.car-dots i');
+    var i = 0;
+    var show = function (n) {
+      imgs[i].classList.remove('on'); dots[i].classList.remove('on');
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add('on'); dots[i].classList.add('on');
+      imgs[i].removeAttribute('loading');   // load it now, it is on screen
+    };
+    car.querySelector('.car-prev').addEventListener('click', function () { show(i - 1); });
+    car.querySelector('.car-next').addEventListener('click', function () { show(i + 1); });
+  });
+})();

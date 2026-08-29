@@ -438,6 +438,34 @@ img.brandmark-still{ display:none; }   /* matches .brand img specificity */
 }
 .item:hover .item-media img{ filter:saturate(1) brightness(1); }
 
+/* carousel variant: one photo at a time, like the original Google Site.
+   The finished product leads; the rest wait behind the arrows. */
+.item-media.car{ display:block; position:relative; }
+.item-media.car img{ display:none; }
+.item-media.car img.on{ display:block; }
+.car-btn{
+  display:none; position:absolute; top:50%; transform:translateY(-50%);
+  width:34px; height:34px; border-radius:50%; border:1px solid rgba(234,244,252,.25);
+  background:rgba(2,13,28,.62); color:var(--text);
+  align-items:center; justify-content:center; cursor:pointer; z-index:2;
+  transition:background .2s, border-color .2s;
+}
+.js .car-btn{ display:flex; }
+.car-btn:hover{ background:rgba(0,147,209,.55); border-color:var(--blue-hi); }
+.car-prev{ left:10px; }
+.car-next{ right:10px; }
+.car-next svg{ transform:scaleX(-1); }
+.car-dots{
+  display:none; position:absolute; left:50%; bottom:9px; transform:translateX(-50%);
+  gap:6px; z-index:2;
+}
+.js .car-dots{ display:flex; }
+.car-dots i{
+  width:6px; height:6px; border-radius:50%;
+  background:rgba(234,244,252,.35); transition:background .2s;
+}
+.car-dots i.on{ background:var(--blue-hi); }
+
 .item-body{ padding:clamp(16px,1.7vw,22px); display:flex; flex-direction:column; gap:9px; }
 .item-body h3{ font-family:var(--sans); font-size:17px; font-weight:600; line-height:1.32; letter-spacing:.005em; }
 .item-body p{ margin:0; color:var(--muted); font-size:14.5px; line-height:1.6; }
