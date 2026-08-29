@@ -438,6 +438,10 @@ img.brandmark-still{ display:none; }   /* matches .brand img specificity */
 }
 .item:hover .item-media img{ filter:saturate(1) brightness(1); }
 
+/* the original site's tile shapes: 4-up rows square, 3-up rows portrait */
+.items-4 .item-media{ aspect-ratio:1/1; }
+.items-3 .item-media{ aspect-ratio:9/10; }
+
 /* carousel variant: one photo at a time, like the original Google Site.
    The finished product leads; the rest wait behind the arrows. */
 .item-media.car{ display:block; position:relative; }
