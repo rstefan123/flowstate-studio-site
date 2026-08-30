@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Custom Electronics — Flow State</title>
 <meta name="description" content="Custom gadgets, guitar wiring, one-off pedals and studio utilities, built to your specs.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-tHd4qJ0R/vQfI0CbRTiL3XGSi+Tun7VhOcDbx08aLKA='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#031428">
@@ -15,6 +17,7 @@
 <meta property="og:description" content="Custom gadgets, guitar wiring, one-off pedals and studio utilities, built to your specs.">
 <meta property="og:url" content="https://flowstatedesign.studio/custom-electronics.html">
 <meta property="og:image" content="https://flowstatedesign.studio/assets/img/og-cover.jpg">
+<meta property="og:image:alt" content="Flow State Design">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,6 +25,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="top">
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
@@ -32,7 +36,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="phero">
     <div class="phero-bg"><img src="assets/img/hero-electronics.jpg" alt=""></div>
     <div class="wrap">
@@ -44,7 +48,7 @@
   </section>
   <section class="section blk">
     <div class="wrap">
-      <div class="phead rv"><span class="node"></span><span class="mono">Custom Gadgets</span><span class="run"></span></div>
+      <div class="phead rv"><span class="node"></span><h2 class="mono">Custom Gadgets</h2><span class="run"></span></div>
       <div class="items items-3"><article class="item rv">
           <div class="item-media car"><img src="assets/img/elec/mutedim.jpg" alt="A custom mute/dim switch with its LED indicators lit." class="on" loading="lazy"><img src="assets/img/elec/mutedim-both.jpg" alt="Two finished mute/dim switch units side by side." loading="lazy"><img src="assets/img/elec/mutedim-back.jpg" alt="The rear of the switch enclosure with its GPIO connector." loading="lazy"><img src="assets/img/elec/mutedim-inside.jpg" alt="The inside of the mute/dim switch enclosure." loading="lazy"><button class="car-btn car-prev" type="button" aria-label="Previous photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="car-btn car-next" type="button" aria-label="Next photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="car-dots"><i class="on"></i><i></i><i></i><i></i></div></div>
           <div class="item-body"><h3>Hardware Switches/Indicators</h3><p>Various custom solutions can be designed to interface with your hardware. This example is a mute/dim switch with LED indicators that talks to Q-SYS GPIO.</p></div>
@@ -68,7 +72,7 @@
   </section>
   <section class="section blk">
     <div class="wrap">
-      <div class="phead rv"><span class="node"></span><span class="mono">Guitar Wiring</span><span class="run"></span></div>
+      <div class="phead rv"><span class="node"></span><h2 class="mono">Guitar Wiring</h2><span class="run"></span></div>
       <div class="prose rv"><p>We believe that every guitar should have series mode, not just a few special Fender models. When you hear it, you&rsquo;ll never want to go back. While we&rsquo;re at it, we&rsquo;ll throw in out of phase and other modes, why not.</p></div><div class="items items-4"><article class="item rv">
           <div class="item-media car"><img src="assets/img/elec/strat.jpg" alt="A Stratocaster with custom switching installed." class="on" loading="lazy"><img src="assets/img/elec/strat-guard.jpg" alt="The pickguard removed, showing the shielding and switches." loading="lazy"><img src="assets/img/elec/strat-wiring.jpg" alt="The wiring under the pickguard." loading="lazy"><button class="car-btn car-prev" type="button" aria-label="Previous photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="car-btn car-next" type="button" aria-label="Next photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="car-dots"><i class="on"></i><i></i><i></i></div></div>
           <div class="item-body"><h3>Custom Fender Stratocaster Wiring</h3><p>10 position Freeway switch, 3x S-1 switches, kill switch. Myriad available combinations of pickups in series or parallel, out of phase, or pots removed from circuit.</p></div>
@@ -86,7 +90,7 @@
   </section>
   <section class="section blk">
     <div class="wrap">
-      <div class="phead rv"><span class="node"></span><span class="mono">Guitar Pedals</span><span class="run"></span></div>
+      <div class="phead rv"><span class="node"></span><h2 class="mono">Guitar Pedals</h2><span class="run"></span></div>
       <div class="prose rv"><p>Just a few examples of one-off original designs. Custom enclosure engraving and painting available for added fee.</p></div><div class="items items-3"><article class="item rv">
           <div class="item-media car"><img src="assets/img/elec/germanium.jpg" alt="The Germanium Bootstrap pedal with its indicator lit." class="on" loading="lazy"><img src="assets/img/elec/germanium-guts.jpg" alt="The circuit board inside the pedal." loading="lazy"><button class="car-btn car-prev" type="button" aria-label="Previous photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="car-btn car-next" type="button" aria-label="Next photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="car-dots"><i class="on"></i><i></i></div></div>
           <div class="item-body"><h3>Germanium Bootstrap</h3><p>A juicy fuzz/overdrive.</p></div>
@@ -101,7 +105,7 @@
   </section>
   <section class="section blk">
     <div class="wrap">
-      <div class="phead rv"><span class="node"></span><span class="mono">Utilities</span><span class="run"></span></div>
+      <div class="phead rv"><span class="node"></span><h2 class="mono">Utilities</h2><span class="run"></span></div>
       <div class="items items-4"><article class="item rv">
           <div class="item-media car"><img src="assets/img/elec/stereo-di.jpg" alt="A passive stereo DI box." style="object-position:center 35%;" class="on" loading="lazy"><img src="assets/img/elec/stereo-di-guts.jpg" alt="The Jensen transformers inside the DI." loading="lazy"><button class="car-btn car-prev" type="button" aria-label="Previous photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="car-btn car-next" type="button" aria-label="Next photo"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 2 4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="car-dots"><i class="on"></i><i></i></div></div>
           <div class="item-body"><h3>Stereo DI</h3><p>Simple passive stereo direct box using Jensen transformers.</p></div>

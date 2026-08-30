@@ -1,15 +1,19 @@
 (function () {
   var nav = document.querySelector('.nav');
-  var onScroll = function () { nav.classList.toggle('stuck', window.scrollY > 8); };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle('stuck', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 
   var burger = document.querySelector('.burger');
   var menu = document.querySelector('.menu');
-  burger.addEventListener('click', function () {
-    var open = menu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
 
   var items = document.querySelectorAll('.rv');
   if (!('IntersectionObserver' in window)) {
