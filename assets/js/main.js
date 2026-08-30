@@ -30,6 +30,22 @@
 
 // item-media carousels: prev/next cycle through an item's photos
 (function () {
+  // fetch every slide as soon as its carousel nears the viewport, so the
+  // arrows always land on a ready image instead of a still-loading one
+  var warm = function (car) {
+    car.querySelectorAll('img[loading]').forEach(function (im) { im.removeAttribute('loading'); });
+  };
+  if ('IntersectionObserver' in window) {
+    var wio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        warm(e.target); wio.unobserve(e.target);
+      });
+    }, { rootMargin: '600px 0px' });
+    document.querySelectorAll('.item-media.car').forEach(function (c) { wio.observe(c); });
+  } else {
+    document.querySelectorAll('.item-media.car').forEach(warm);
+  }
   document.querySelectorAll('.item-media.car').forEach(function (car) {
     var imgs = car.querySelectorAll('img');
     var dots = car.querySelectorAll('.car-dots i');

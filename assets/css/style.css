@@ -445,7 +445,7 @@ img.brandmark-still{ display:none; }   /* matches .brand img specificity */
 /* carousel variant: one photo at a time, like the original Google Site.
    The finished product leads; the rest wait behind the arrows. */
 .item-media.car{ display:block; position:relative; }
-.item-media.car img{ display:none; }
+.item-media.car img{ display:none; color:transparent; /* no alt-text flash while loading */ }
 .item-media.car img.on{ display:block; }
 .car-btn{
   display:none; position:absolute; top:50%; transform:translateY(-50%);
