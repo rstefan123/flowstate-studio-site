@@ -364,14 +364,18 @@ h1,h2,h3{ margin:0; font-family:var(--display); font-weight:700;
   .menu a{ padding:14px 0; border-bottom:1px solid var(--line); font-size:16px; }
   .menu a::after{ display:none; }
   .burger{ display:flex; }
-  .nav .wrap{ gap:14px; }
   .about-grid{ grid-template-columns:1fr; }
   .wk-grid{ grid-template-columns:repeat(3,1fr); }
 }
 @media (max-width:640px){
   body{ font-size:16px; }
   .svc-grid{ grid-template-columns:1fr; }
-  .nav-cta{ display:none; }
+  /* keep the call to action visible on phones: trim the button and the
+     wordmark just enough that brand + button + burger fit one row */
+  .nav-cta{ display:inline-flex; font-size:10px; letter-spacing:.09em;
+    padding:9px 12px; }
+  .brand img{ height:30px; }
+  .nav .wrap{ gap:10px; }
   .hero .wrap{ padding-top:96px; }
   .idx-row{ grid-template-columns:1fr; gap:5px; }
   .idx-row .t em{ font-style:normal; color:var(--dim); }
