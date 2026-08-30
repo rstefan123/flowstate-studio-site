@@ -141,8 +141,28 @@ h1,h2,h3{ margin:0; font-family:var(--display); font-weight:700;
 
 .brand{ display:flex; align-items:center; margin-right:auto; }
 .brand img{ height:36px; width:auto; display:block; }
+/* The wordmark cycles SOUND -> DESIGN -> ENGINEERING as three stacked static
+   images rather than an animated PNG/WebP. Animated-image decoding was being
+   corrupted on iOS Firefox (rows sheared and wrapped); stacking plain PNGs and
+   switching opacity in CSS removes that decoder from the picture entirely. */
+.fsm{ position:relative; display:block; }
+.fsm img{ display:block; }
+.fsm img + img{ position:absolute; inset:0; width:100%; height:100%; }
+.fsm img{ opacity:0; animation:fsm-cycle 3s steps(1,end) infinite; }
+.fsm img:nth-child(1){ animation-delay:0s; }
+.fsm img:nth-child(2){ animation-delay:1s; }
+.fsm img:nth-child(3){ animation-delay:2s; }
+@keyframes fsm-cycle{
+  0%,33.333%   { opacity:1; }
+  33.334%,100% { opacity:0; }
+}
+/* no motion wanted, or no CSS animation support: show the first frame only */
+@media (prefers-reduced-motion:reduce){
+  .fsm img{ animation:none; opacity:0; }
+  .fsm img:nth-child(1){ opacity:1; }
+}
+
 .brandmark{ display:block; }
-img.brandmark-still{ display:none; }   /* matches .brand img specificity */
 .foot .brand img{ height:33px; }
 
 .menu{ display:flex; align-items:center; gap:clamp(14px,1.5vw,22px); }
@@ -195,8 +215,8 @@ img.brandmark-still{ display:none; }   /* matches .brand img specificity */
   padding-top:0; padding-bottom:var(--svc-overlap); }
 
 .hero-mark{ margin-bottom:0; }
-.hero-mark img{ width:clamp(240px,34vw,440px); height:auto; margin-inline:auto; }
-.hero-mark-still{ display:none; }
+.hero-mark .fsm{ width:clamp(240px,34vw,440px); margin-inline:auto; }
+.hero-mark .fsm img{ width:100%; height:auto; }
 
 .hero-eyebrow{ color:var(--blue-hi); display:flex; align-items:center; gap:12px; margin-bottom:26px; }
 .hero-eyebrow i{ display:block; width:26px; height:1px; background:var(--blue); font-style:normal; }
@@ -356,14 +376,17 @@ img.brandmark-still{ display:none; }   /* matches .brand img specificity */
   .idx-row{ grid-template-columns:1fr; gap:5px; }
   .idx-row .t em{ font-style:normal; color:var(--dim); }
 .idx-row .r{ text-align:left; }
+  /* once the slogan and the button stack, space-between leaves each row
+     flush left; centre the whole block instead */
+  .cta .wrap{ justify-content:center; text-align:center; gap:26px; }
+  .cta h2{ max-width:none; }
+  .cta-side{ width:100%; align-items:center; }
+  .foot-bot{ justify-content:center; text-align:center; }
+  .foot-nav{ justify-content:center; }
 }
 
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto; }
-  .hero-mark-anim{ display:none; }
-  .hero-mark-still{ display:block; }
-  .brandmark-anim{ display:none; }
-  img.brandmark-still{ display:block; }
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
   .js .rv{ opacity:1; transform:none; }
   .phead .node{ animation:none; background:var(--blue);
