@@ -479,7 +479,7 @@ h1,h2,h3{ margin:0; font-family:var(--display); font-weight:700;
 .car-btn:hover{ background:rgba(0,147,209,.55); border-color:var(--blue-hi); }
 .car-prev{ left:10px; }
 .car-next{ right:10px; }
-.car-next svg{ transform:scaleX(-1); }
+.car-prev svg{ transform:scaleX(-1); }   /* glyph points right; flip it for the back button */
 .car-dots{
   display:none; position:absolute; left:50%; bottom:9px; transform:translateX(-50%);
   gap:6px; z-index:2;
